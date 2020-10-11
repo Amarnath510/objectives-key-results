@@ -1,0 +1,19 @@
+.filters {
+  padding: 24px 0;
+}
+
+.filters__label {
+  padding-left: 8px;
+}
+
+.filters__categories {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 992px) {
+  .filters__categories {
+    display: block;
+  }
+}

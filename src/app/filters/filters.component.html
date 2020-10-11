@@ -1,0 +1,14 @@
+<div class="filters">
+  <form *ngIf="categories?.length">
+    <fieldset class="filters__set">
+      <legend>Filter by Category</legend>
+      <div class="filters__categories">
+        <div *ngFor="let category of categories" class="filters__category">
+          <input type="radio" [id]="category" name="category" (change)="onFilter(category)" class="filters__input">
+          <label [for]="category" class="filters__label">{{ category }}</label><br />
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</div>

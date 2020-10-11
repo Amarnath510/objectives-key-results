@@ -1,0 +1,30 @@
+<article class="objectives">
+
+  <app-filters *ngIf="allOkrsResults?.length"
+    [allOkrsResults]="allOkrsResults"
+    (updatedCategory)="filterByCategory($event)">
+  </app-filters>
+
+  <ng-container *ngIf="okrsParents?.length">
+    <ngb-accordion [closeOthers]="true"
+      [activeIds]="firstOkrs?.id"
+      (panelChange)="onParentChange($event)">
+      <ngb-panel *ngFor="let okrs of okrsParents"
+        [id]="okrs?.id"
+        [title]="okrs?.title">
+        <ng-template ngbPanelContent>
+          <div class="objectives__child-metrics-container">
+            <ul class="objectives__child-metrics" *ngIf="childrenOfActiveParentOkrs?.length">
+              <li class="objectives__child-metric" *ngFor="let childOkrs of childrenOfActiveParentOkrs">
+                <p class="objectives__child-metric-title"> &rsaquo; {{ childOkrs?.title }}</p>
+              </li>
+            </ul>
+            <p *ngIf="childrenOfActiveParentOkrs?.length === 0">
+              No Results
+            </p>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </ng-container>
+</article>

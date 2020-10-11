@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "objectives-key-results"
+    }
+  },
+  "defaultProject": "objectives-key-results",
+  "cli": {
+    "analytics": false
+  }
 }
